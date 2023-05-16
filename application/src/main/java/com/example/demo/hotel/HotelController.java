@@ -22,7 +22,7 @@ public class HotelController {
     public ResponseEntity<List<Hotel>> getAllHotels(
             @RequestParam(required = false) Integer stars,
             @RequestParam(required = false) Double minDailyRate) {
-        List<Hotel> hotels = hotelService.getAllHotels();
+        List<Hotel> hotels = hotelService.getAllHotels(stars, minDailyRate);
         // TODO FILTER
         return new ResponseEntity<>(hotels, HttpStatus.OK);
     }
